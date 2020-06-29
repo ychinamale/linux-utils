@@ -145,6 +145,11 @@ installJss() {
     npm install react-jss
 }
 
+installReactRouter() {
+    echo 'Installing React Router'
+    npm install react-router-dom
+}
+
 setProjectName() {
     if [ $# -lt 1 ]
     then
@@ -207,6 +212,8 @@ installBabel
 installBootstrap
 
 installJss
+
+installReactRouter
 
 setupPackageJson
 
