@@ -41,7 +41,10 @@ module.exports = {
         new HtmlWebpackPlugin ({
             template: '${HTML_TEMPLATE}'
         })
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true
+    }
 }
 webpackconfig
 }
@@ -101,7 +104,7 @@ createProjectDir() {
     if [ -d $1 ]
     then
         echo "'$1' already exists. Backing up to '$1_${TIMESTAMP}_${TIMENOW}'"
-        mv $1 $1_${TIMESTAMP}_${TIMENOW}
+        #mv $1 $1_${TIMESTAMP}_${TIMENOW}
     fi
     
     echo "Creating '$1' ..."
@@ -130,6 +133,16 @@ installLoaders() {
 installBabel() {
     echo 'Installing Babel packages ...'
     npm install --save-dev @babel/core @babel/preset-env @babel/preset-react
+}
+
+installBootstrap() {
+    echo 'Installing Bootstrap and React Bootstrap'
+    npm install react-bootstrap bootstrap
+}
+
+installJss() {
+    echo 'Installing ReactJSS'
+    npm install react-jss
 }
 
 setProjectName() {
@@ -190,6 +203,10 @@ installWebpack
 installLoaders
 
 installBabel
+
+installBootstrap
+
+installJss
 
 setupPackageJson
 
