@@ -28,7 +28,8 @@ module.exports = {
     entry : './${ENTRY}',
     output: {
         path: path.resolve(__dirname, '${BUILD_DIR}'),
-        filename: '${JS_BUNDLE}'
+        filename: '${JS_BUNDLE}',
+        publicPath: '/'
     },
     module: {
         rules: [
