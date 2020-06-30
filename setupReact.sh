@@ -147,8 +147,8 @@ installJss() {
 }
 
 installReactRouter() {
-    echo 'Installing React Router'
-    npm install react-router-dom
+    echo 'Installing Routers'
+    npm install react-router-dom react-router-bootstrap
 }
 
 setProjectName() {
